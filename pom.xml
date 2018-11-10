@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.example.maven.profile</groupId>
+	<artifactId>maven-profile-example</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<profiles>
+		<!-- Configure Profile for development env -->
+		<profile>
+			<id>dev</id>
+			<properties>
+				<build.profile.id>dev</build.profile.id>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/profiles/dev</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+
+		<!-- Configure Profile for testing env -->
+		<profile>
+			<id>test</id>
+			<properties>
+				<build.profile.id>test</build.profile.id>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/profiles/test</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+
+		<!-- Configure Profile for production env -->
+
+		<profile>
+			<id>prod</id>
+			<properties>
+				<build.profile.id>prod</build.profile.id>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/profiles/prod</directory>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+
+	</profiles>
+</project>
